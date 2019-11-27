@@ -1,0 +1,6 @@
+# Parity
+
+```console
+parity --help
+
+```
