@@ -84,3 +84,9 @@ Timeline of system modified
 - 2019-12-11
   - 15:52
     - wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
+- 2020-01-07
+  - 11:00
+   - sudo touch /etc/rc.local
+   - sudo cat > /etc/rc.local
+     echo 8500 > /sys/class/backlight/intel_backlight/brightness
+   - sudo +x /etc/rc.local
