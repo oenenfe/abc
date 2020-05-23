@@ -1,5 +1,11 @@
 # CentOS 8
 
+## Install Development tools
+
+```
+yum groupinstall "Development tools" 
+```
+
 ## Install screen
 
 ```console
