@@ -86,7 +86,12 @@ Timeline of system modified
     - wget -q -O - https://raw.githubusercontent.com/LedgerHQ/udev-rules/master/add_udev_rules.sh | sudo bash
 - 2020-01-07
   - 11:00
-   - sudo touch /etc/rc.local
-   - sudo cat > /etc/rc.local
-     echo 8500 > /sys/class/backlight/intel_backlight/brightness
-   - sudo +x /etc/rc.local
+    - sudo touch /etc/rc.local
+    - sudo cat > /etc/rc.local
+      echo 8500 > /sys/class/backlight/intel_backlight/brightness
+    - sudo +x /etc/rc.local
+- 2020-05-31
+  - 17:20
+    - sudo snap install grin 
+    - sudo snap install --classic riseup-vpn
+    - sudo apt install tor

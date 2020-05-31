@@ -48,3 +48,21 @@ grin.wallet send -d http://10.20.20.1:3415 10.25
 # If successful, the amounts will be confirmed in both wallets after a few blocks have been found.
 ```
 
+## Configure listener
+
+```console
+# 在 v2.0.0 版本下；grin-wallet 默认只监听本地的请求。
+grin.wallet listen
+
+# 有两种方式可以开启监听外部请求。
+# 1. 编辑 grin-wallet.toml，把 api_listener_interface 的值 127.0.0.1 改为 # 0.0.0.0。
+# 2. 或者直接加参数 -e。
+grin.wallet -e listen
+
+# 从 v3.0.0 开始，grin-wallet 默认会以 tor 服务进行监听；只要 tor
+# 可执行文件在路径中可用，钱包侦听器会自动通过 tor 监听。这种情况下，无需 -e 参数；然而假如 tor 不可用，此时因为没有加 -e 参数，默认 http 只监听本地。
+grin.wallet listen
+
+# 不启用 tor 模式监听；并且开启外部请求监听。
+grin.wallet -e listen -n
+```
