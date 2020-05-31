@@ -2,6 +2,25 @@
 
 [https://github.com/mimblewimble/docs/wiki](https://github.com/mimblewimble/docs/wiki)
 
+## Run a node on vultr
+
+[https://snapcraft.io/install/grin/centos](https://snapcraft.io/install/grin/centos)
+
+```console
+$ wget https://github.com/mimblewimble/grin/releases/download/v3.1.1/grin-v3.1.1-linux-amd64.tar.gz
+$ sha256sum grin-v3.1.1-linux-amd64.tar.gz
+7f0346b7ca0768989a0a11f62e56da743a72a208e99d5f3409f22112c4dd8def  grin-v3.1.1-linux-amd64.tar.gz
+
+$ tar -xzvf grin-v3.1.1-linux-amd64.tar.gz
+
+$ ./grin/grin
+./grin/grin: error while loading shared libraries: libncursesw.so.5: cannot open shared object file: No such file or directory
+
+$ yum install libncurses*
+
+$ ./grin/grin
+```
+
 ## Install on Ubuntu
 
 ```console
