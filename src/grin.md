@@ -4,7 +4,7 @@
 
 ## Install on Ubuntu
 
-```
+```console
 snap install grin
 
 # run a grin node
@@ -26,7 +26,7 @@ grin.wallet init
 
 ### 1. Via file
 
-```
+```console
 # 1.Sender
 grin.wallet send -m file -d my_grin_transaction.tx 1.01
 # This will create a transaction file called `my_grin_transaction.tx` in the current directory.
@@ -42,7 +42,7 @@ grin.wallet finalize -i my_grin_transaction.response
 
 ### 2. Via a running wallet listener
 
-```
+```console
 # If the recipient is running an HTTP listener, you can send an amount from your wallet to theirs and post the transaction to the chain in a single step:
 grin.wallet send -d http://10.20.20.1:3415 10.25
 # If successful, the amounts will be confirmed in both wallets after a few blocks have been found.
