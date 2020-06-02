@@ -84,7 +84,7 @@ $ grin.wallet -e listen -n
 
 ### Example on Ubuntu
 
-```
+```console
 $ snap install grin
 
 # Run grin node, and wait for it fully synced.
