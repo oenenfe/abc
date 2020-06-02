@@ -63,3 +63,28 @@ $ grin.wallet listen
 # Prevent starting the TOR listener, and listen externally.
 $ grin.wallet -e listen -n
 ```
+
+### Example on Ubuntu
+
+```
+$ snap install grin
+
+# Run grin node, and wait for it fully synced.
+$ grin
+
+$ grin.wallet -e listen -n
+$ grin.wallet init -r
+
+# Open port 3415/tcp
+$ sudo ufw allow 3415/tcp
+
+# Go to router settings page, and forward port 3415 for TCP.
+# http://192.168.3.1
+
+# Find external IP. If a VPN is running, just check your local external IP on router settings page.
+$ curl ipecho.net/plain; echo
+183.105.6.128
+
+# Go to exchange's withdrawal page.
+$ grin-wallet send -d http://183.105.6.128:3415 10.05
+```
