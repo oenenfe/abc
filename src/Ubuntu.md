@@ -14,6 +14,16 @@ $ blacklist ideapad_laptop
 $ reboot
 ```
 
+## Install basic development tools
+
+```console
+$ sudo apt install build-essential
+
+# required for npm
+# https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally#manually-change-npms-default-directory
+$ sudo apt install libtool
+```
+
 ## UFW
 
 [Firewalls introducations](https://help.ubuntu.com/community/Firewall)
