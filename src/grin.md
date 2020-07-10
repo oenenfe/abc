@@ -30,19 +30,25 @@ Run a node on CentOS: [https://snapcraft.io/install/grin/centos](https://snapcra
 ### 1. Via file
 
 ```console
-# 1. Sender create a transaction file called `my_grin_transaction.tx` 
-# in the current directory.
-$ grin.wallet send -m file -d my_grin_transaction.tx 1.01
+# 1. Sender create a transaction file in `.grin/main/slatepack`.
+$ grin.wallet send -m 10.5
+$ ls ~/.grin/main/slatepack
+14e457b7-2660-4103-9f54-cec131b23fad.S1.slatepack
 
-# 2. Recipienter create a response file called
-# `my_grin_transaction.tx.response` which you must then send back to
-# the sender to complete and post to the chain.
-$ grin.wallet receive -i my_grin_transaction.tx
+# 1. Receiver create a response file.
+# Note, the slatepack file path is very important!
+$ cp ~/14e457b7-2660-4103-9f54-cec131b23fad.S1.slatepack ~/.grin/main/slatepack
+$ grin.wallet receive -m -i ~/.grin/main/slatepack/14e457b7-2660-4103-9f54-cec131b23fad.S1.slatepack
+$ ls ~/.grin/main/slatepack
+14e457b7-2660-4103-9f54-cec131b23fad.S1.slatepack    14e457b7-2660-4103-9f54-cec131b23fad.S2.slatepack
 
-# 3. Sender post the transaction to the listening grin node, and the
-# balances should confirm in both your wallet and the recipient's
-# wallet after a few blocks have been found.
-$ grin.wallet finalize -i my_grin_transaction.response
+# 3. Sender post the transaction to the listening grin node.
+# Note, the slatepack file path is very important!
+$ cp ~/14e457b7-2660-4103-9f54-cec131b23fad.S2.slatepack ~/.grin/main/slatepack
+$ grin.wallet finalize -i ~/.grin/main/slatepack/14e457b7-2660-4103-9f54-cec131b23fad.S2.slatepack
+$ ls ~/.grin/main/slatepack
+14e457b7-2660-4103-9f54-cec131b23fad.S1.slatepack    14e457b7-2660-4103-9f54-cec131b23fad.S2.slatepack
+14e457b7-2660-4103-9f54-cec131b23fad.S3.slatepack
 ```
 
 ### 2. Via a running wallet listener
