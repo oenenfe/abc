@@ -24,6 +24,13 @@ $ sudo apt install build-essential
 $ sudo apt install libtool
 ```
 
+## Service
+
+```
+$ sudo systemctl enable v2ray
+$ sudo systemctl disable v2ray
+```
+
 ## UFW
 
 [Firewalls introducations](https://help.ubuntu.com/community/Firewall)
